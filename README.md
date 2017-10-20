@@ -12,4 +12,4 @@ Node.js e WebSockets será utilizados
 
 Links úteis:
 
-	<a href="https://github.com/theturtle32/WebSocket-Node">WebSockets</a>
+<a href="https://github.com/theturtle32/WebSocket-Node">WebSockets</a>
