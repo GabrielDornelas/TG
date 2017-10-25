@@ -2,14 +2,8 @@
 
 Controle de dados
 
-Arduino UNO com sensores
+NodeMcu ESP8266 com sensor de temperatura/umidade
 
-Arduino utilizará a biblioteca FIRMATA
+Utilizará conexão MQTT em nuvem para disponibilizar dados online
 
-Códigos em javascript
 
-Node.js e WebSockets será utilizados
-
-Links úteis:
-
-<a href="https://github.com/theturtle32/WebSocket-Node">WebSockets</a>
