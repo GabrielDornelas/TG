@@ -4,9 +4,9 @@
 // biblioteca para uso do wi-fi
 #include <ESP8266WiFi.h>
 // troque pelo nome da sua rede
-const char* ssid = "FatecSJC";
+const char* ssid = "Dornelas";
 // troque pela senha da sua rede
-const char* password = "";
+const char* password = "ArEIAmOlhAdA39562652";
 // objeto para conexão do wi-fi
 WiFiClient nodemcuClient;
 
