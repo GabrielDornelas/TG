@@ -38,19 +38,19 @@ int umidade;
 // variável onde será armazenado dado de temperatura
 int temperatura;
 
-// --- DISPLAY ---
+/*// --- DISPLAY ---
 // biblioteca para utilizar o display
 #include <Adafruit_SSD1306.h>
 // definição para utilização do led da placa nodemcu
 #define OLED_RESET LED_BUILTIN
 // disponibiliza o uso do display
-Adafruit_SSD1306 display(OLED_RESET);
+Adafruit_SSD1306 display(OLED_RESET);*/
 
 // --- BOOT ---
 // inicia o sistema
 void setup() {
   // função de iniciar o display
-  configurarDisplay();
+  //configurarDisplay();
   // função para conectar ao wi-fi definido anteriormente
   conectarWifi();
   // função para utilizar o server definido anteriormente, para porta 1883
@@ -63,14 +63,14 @@ void loop() {
   // caso a conexão não aconteça~
   if (!client.connected()) {
     // função de reconectar ao MQTT será chamada para que a conexão seja realizada
-    reconectarMQTT();
-  }
+    reconectarMQTT();}
   // função para que o sensor utilizado meça os dados
   medirDados();
   // mostrar no display os dados medidos
-  mostrarDados();
+  //mostrarDados();
   // função para enviar as informações ao tópico
   publicarDadosNoTopico();
+  delay(60000);
 }
 
 // função para mostrar no display a tentativa de conectar ao wi-fi 
@@ -79,13 +79,13 @@ void conectarWifi() {
   delay(10);
 
   // definição de tamanho de fonte para o display
-  display.setTextSize(2);
+  /*display.setTextSize(2);
   // definição do local da mensagem a ser apresentada no display
   display.setCursor(0, 0);
   // mensagem a ser enviada ao display
   display.print("Conectando ");
   // enviar mensagem ao display com as configurações definidas
-  display.display();
+  display.display();*/
 
   // iniciar a conexão wi-fi na rede ssid com a senha password
   WiFi.begin(ssid, password);
@@ -94,8 +94,8 @@ void conectarWifi() {
   while (WiFi.status() != WL_CONNECTED) {
     // a cada segundo um ponto será mostrado no display
     delay(1000);
-    display.print(".");
-    display.display();
+    /*display.print(".");
+    display.display();*/
   }
 }
 
@@ -107,7 +107,7 @@ void reconectarMQTT() {
   }
 }
 
-// função para configuração e utilização do display
+/*// função para configuração e utilização do display
 void configurarDisplay() {
   // função do display para seu uso
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
@@ -127,7 +127,7 @@ void configurarDisplay() {
   delay(1500);
   // limpa dados que haviam no display
   display.clearDisplay();
-}
+}*/
 
 // função para enviar os dados do sensor para seu tópico
 void publicarDadosNoTopico() {
@@ -147,15 +147,15 @@ void medirDados() {
   delay(5000);
 }
 
-// função para mostrar os dados no display
+/*// função para mostrar os dados no display
 void mostrarDados() {
   // mostra os dados de temperatura
   mostrarMensagemNoDisplay("Temperatura", (temperatura), " C");
   // mostra os dados de umidade
   mostrarMensagemNoDisplay("Umidade", (umidade), " %");
-}
+}*/
 
-// função para mostrar mensagem dos valores medidos no display
+/*// função para mostrar mensagem dos valores medidos no display
 void mostrarMensagemNoDisplay(const char* texto1, int medicao, const char* texto2) {
   // limpa dados que haviam no display
   display.clearDisplay();
@@ -179,4 +179,4 @@ void mostrarMensagemNoDisplay(const char* texto1, int medicao, const char* texto
   display.display();
   // tempo para que a leitura da mensagem seja compreendida
   delay(2000);
-}
+}*/
