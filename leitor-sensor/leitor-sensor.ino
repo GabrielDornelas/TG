@@ -4,9 +4,9 @@
 // biblioteca para uso do wi-fi
 #include <ESP8266WiFi.h>
 // troque pelo nome da sua rede
-const char* ssid = "FatecSJC";
+const char* ssid = "Dornelas";
 // troque pela senha da sua rede
-const char* password = "";
+const char* password = "ArEIAmOlhAdA39562652";
 // objeto para conexão do wi-fi
 WiFiClient nodemcuClient;
 
@@ -20,9 +20,9 @@ const char* mqtt_ClientID = "Gabriel";
 // criando o servidor
 PubSubClient client(nodemcuClient);
 // nomeando tópico de temperatura do servidor
-const char* topicoTemperatura = "sensor/temperatura";
+const char* topicoTemperatura = "sensorDornelas/temperatura";
 // nomeando tópico de umidade do servidor
-const char* topicoUmidade = "sensor/umidade";
+const char* topicoUmidade = "sensorDornelas/umidade";
 
 // --- DHT ---
 // biblioteca para uso do sensor de temperatura/umidade
