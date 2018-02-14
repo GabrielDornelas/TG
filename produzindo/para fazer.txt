@@ -1,0 +1,9 @@
+quando apertar o start iniciar o supply.py
+
+a escolha dos sensores ta bugada(quando escolhe um, ele preenche as duas labels com o mesmo sensor)
+
+nos gráficos, o que é a numeração da parte de baixo ? devemos usar como tempo se possível
+
+criar uma listagem de tempo de horas e outra de minutos para rodar o programa no tempo escolhido
+
+na tela dos gráficos criar label com o último valor medido

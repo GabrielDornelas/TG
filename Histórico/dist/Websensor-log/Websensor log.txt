@@ -1,5 +1,0 @@
-sensorDornelas/temperatura 25 10:58:43 4/12/2017
-sensorDornelas/umidade 43 10:58:43 4/12/2017
-sensorDornelas/temperatura 25 10:58:45 4/12/2017
-sensorDornelas/umidade 43 10:58:45 4/12/2017
-sensorDornelas/temperatura 25 10:58:54 4/12/2017
