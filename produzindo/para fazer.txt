@@ -1,5 +1,1 @@
 ﻿?a escolha dos sensores ta bugada(quando escolhe um, ele preenche as duas labels com o mesmo sensor)?
-
-criar uma listagem de tempo de horas e outra de minutos para rodar o programa no tempo escolhido
-
-?fazer com que o sensor leia o nome escolhido da lista_choice e não de string?
