@@ -1,8 +1,14 @@
 //Trabalho de Graduação, WebSensor, Gabriel Dornelas
  
 #include <ESP8266WiFi.h> //Importa a Biblioteca ESP8266WiFi
-const char* SSID = "Dornelas"; //SSID /nome da rede WI-FI que deseja se conectar
-const char* PASSWORD = "ArEIAmOlhAdA39562652"; //Senha da rede WI-FI que deseja se conectar
+//const char* SSID = "Dornelas"; //SSID /nome da rede WI-FI que deseja se conectar
+//const char* PASSWORD = "ArEIAmOlhAdA39562652"; //Senha da rede WI-FI que deseja se conectar
+//const char* SSID = "Univap";
+//const char* PASSWORD = "universidade";
+//const char* SSID = "GNBR";
+//const char* PASSWORD = "qawsedrf";
+const char* SSID = "FatecWifi";
+const char* PASSWORD = "";
 WiFiClient espClient; //Cria o objeto espClient
 
 #include <PubSubClient.h> //Importa a Biblioteca PubSubClient

@@ -22,10 +22,10 @@ a.axes.get_xaxis().set_visible(False)
 b = f.add_subplot(212)
 b.axes.get_xaxis().set_visible(False)
 l_choice = []
-lista_temper=[]
-lista_umid=[]
-final=None
-start_time=None
+lista_temper = []
+lista_umid = []
+final = None
+start_time = None
 
 
 def animate(i):
@@ -62,8 +62,7 @@ def animate(i):
                     yList.append(int(x))
             b.clear()
             b.set_title(l_choice[1] + ": " + str(yList[-1]))
-            b.plot(yList)
-        
+            b.plot(yList)        
     except:
         return -1   
 
@@ -98,7 +97,7 @@ class StartPage(tk.Frame):
     controller = None
 
     def __init__(self, parent, controller):
-        self.controller=controller
+        self.controller = controller
         tk.Frame.__init__(self, parent)
         label = ttk.Label(self, text = "Start Page", font = LARGE_FONT)
         label.pack(pady = 30, padx = 30)
@@ -114,7 +113,7 @@ class StartPage(tk.Frame):
         vcmd = (parent.register(self.validate),'%d', '%i', '%P', '%s', '%S', '%v', '%V', '%W')
         label = ttk.Label(self, text = "Minutos")
         label.pack(pady = 2, padx = 10)
-        self.entry = tk.Entry(self, validate = 'key', validatecommand = vcmd, width=7)
+        self.entry = tk.Entry(self, validate = 'key', validatecommand = vcmd, width = 7)
         self.entry.pack(pady = 2, padx = 10)
 
         popupMenu = ttk.OptionMenu(self, sensorVar, choices[0], *choices)
@@ -150,7 +149,6 @@ class StartPage(tk.Frame):
 
 
 class GraphPage(tk.Frame):
-
     def __init__(self, parent, controller):
         global l_choice,lista_umud,lista_temper,final
         tk.Frame.__init__(self, parent)
@@ -173,17 +171,16 @@ class GraphPage(tk.Frame):
 
         canvas.get_tk_widget().pack(side = tk.TOP, fill = tk.X)
 
-        but1 = ttk.Button(frame2, text=" <-Home", command=lambda: controller.show_frame(StartPage))
-        but1.pack(expand=True, pady=20, padx=20)
+        but1 = ttk.Button(frame2, text = " <-Home", command = lambda: controller.show_frame(StartPage))
+        but1.pack(expand = True, pady = 20, padx = 20)
 
-        but2 = ttk.Button(frame2, text="Start", command=self.start_supply)
-        but2.pack(expand=True, pady=20, padx=20)
+        but2 = ttk.Button(frame2, text = "Start", command = self.start_supply)
+        but2.pack(expand = True, pady = 20, padx = 20)
 
-        but3 = ttk.Button(frame2, text="Stop", command=self.stop_supply)
-        but3.pack(expand=True, pady=20, padx=20)
+        but3 = ttk.Button(frame2, text = "Stop", command = self.stop_supply)
+        but3.pack(expand = True, pady = 20, padx = 20)
 
     def start_supply(self):
-
         global lista_umid,lista_temper,start_time
 
         self.client = mqtt.Client()
@@ -191,10 +188,6 @@ class GraphPage(tk.Frame):
         self.client.on_message = self.on_message
         self.client.on_disconnect = self.on_disconnect
         self.client.connect("iot.eclipse.org", 1883, 60)
-        # Blocking call that processes network traffic, dispatches callbacks and
-        # handles reconnecting.
-        # Other loop*() functions are available that give a threaded interface and a
-        # manual interface.
         self.client.loop_start()
 
         #reset measure list
@@ -214,14 +207,14 @@ class GraphPage(tk.Frame):
 
     def on_disconnect(self, client, userdata, flags):
         print("Disconnected...")
-        file = open(l_choice[0]+".txt", mode = "a")
+        file = open(l_choice[0] + ".txt", mode = "a")
         if l_choice[0] == "Temperatura":
             file.writelines(lista_temper)
         elif l_choice[0] == "Umdade":
             file.writelines(lista_umid)
         file.close()
         print("Saving...")
-        file = open(l_choice[1]+".txt", mode = "a")
+        file = open(l_choice[1] + ".txt", mode = "a")
         if l_choice[1] == "Temperatura":
             file.writelines(lista_temper)
         elif l_choice[1] == "Umdade":
@@ -235,10 +228,10 @@ class GraphPage(tk.Frame):
         global start_time, final
         print(msg.topic + " > " + str(msg.payload.decode()))
         if(msg.topic == 'sensorDornelas/temperatura'):
-            lista_temper.append(str(msg.payload.decode()) + ", timestamp -> "+ str(datetime.datetime.now())[:-7]+"\n")
+            lista_temper.append(str(msg.payload.decode()) + ", timestamp -> " + str(datetime.datetime.now())[:-7] + "\n")
         elif(msg.topic == 'sensorDornelas/umidade'):
-            lista_umid.append(str(msg.payload.decode()) + ", timestamp -> " + str(datetime.datetime.now())[:-7]+"\n")
-        if (time.time() - start_time) >= final*60:
+            lista_umid.append(str(msg.payload.decode()) + ", timestamp -> " + str(datetime.datetime.now())[:-7] + "\n")
+        if (time.time() - start_time) >= final * 60:
             self.stop_supply()
 
     def stop_supply(self):
