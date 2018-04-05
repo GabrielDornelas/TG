@@ -5,10 +5,11 @@
 //const char* PASSWORD = "ArEIAmOlhAdA39562652"; //Senha da rede WI-FI que deseja se conectar
 //const char* SSID = "Univap";
 //const char* PASSWORD = "universidade";
-//const char* SSID = "GNBR";
-//const char* PASSWORD = "qawsedrf";
-const char* SSID = "FatecWifi";
-const char* PASSWORD = "";
+const char* SSID = "GNBR";
+const char* PASSWORD = "qawsedrf";
+//const char* SSID = "FatecSJC";
+//const char* SSID = "Fatec WiFi";
+//const char* PASSWORD = "";
 WiFiClient espClient; //Cria o objeto espClient
 
 #include <PubSubClient.h> //Importa a Biblioteca PubSubClient

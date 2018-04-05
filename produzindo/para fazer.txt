@@ -1,19 +1,12 @@
 ﻿?a escolha dos sensores ta bugada(quando escolhe um, ele preenche as duas labels com o mesmo sensor)?
 
+adicionar LED. ascender pelo servidor por tempo determinado
+
+ligar sensor pelo servidor
+
 adicionar no documento:
-	tecnologias adicionar python e tkinter, matplotlib
+	atualizar imagens 7 e 8 (renomear para diagrama de atividade)
 
-atualizar imagens 7 e 8 (renomear para diagrama de atividade)
+	alterar fundo preto das imagens para branco
 
-alterar fundo preto das imagens para branco
-
-3.5 adicionar passo a passo da instalação no pc (requisitos do 
-arduino(TA NO DONTPAD) e do python)
-	remover coisas do app (figuras e explicações)
-
-adicionar referencias do python, matplotlib, tkinter
-
-adicionar o breno nos agradecimentos
-
-
-
+	3.5 adicionar passo a passo da instalação no pc (requisitos do arduino(TA NO DONTPAD) e do python) remover coisas do app (figuras e explicações)?
